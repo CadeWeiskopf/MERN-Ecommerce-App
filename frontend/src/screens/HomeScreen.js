@@ -36,7 +36,7 @@ function HomeScreen() {
                 dispatch({type: 'FETCH_FAIL', payload: e.message});
             }
             const result = await axios.get('/api/products');
-        }
+        };
         fetchData();
     }, []);
 
