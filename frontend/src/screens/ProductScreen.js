@@ -2,10 +2,14 @@ import { useParams } from "react-router-dom";
 import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import logger from 'use-reducer-logger';
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
+import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Rating from '../components/Rating';
+import { Helmet } from 'react-helmet-async';
 
 
 const reducer = (state, action) => {
@@ -24,7 +28,7 @@ const reducer = (state, action) => {
 function ProductScreen() {
     const params = useParams();
     const {slug} = params;
-    const [{loading, error, product}, dispatch] = useReducer(logger(reducer), {
+    const [{loading, error, product}, dispatch] = useReducer(reducer, {
         product: [], 
         loading: true, 
         error: ''
@@ -55,18 +59,52 @@ function ProductScreen() {
             <Col md={3}>
                 <ListGroup variant="flush">
                     <ListGroup.Item>
+                        <Helmet>
+                            <title>{product.name}</title>
+                        </Helmet>
                         <h1>{product.name}</h1>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Rating rating={product.rating} numReviews={product.numReviews}></Rating>
                     </ListGroup.Item>
-                    <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
                     <ListGroup.Item>
                         <p>{product.description}</p>
                     </ListGroup.Item>
                 </ListGroup>
             </Col>
-            <Col md={3}></Col>
+            <Col md={3}>
+                <Card>
+                    <Card.Body>
+                        <ListGroup variant="flush">
+                            <ListGroup.Item>
+                                <Row>
+                                    <Col>Price:</Col>
+                                    <Col>${product.price}</Col>
+                                </Row>
+                            </ListGroup.Item>
+                            <ListGroup.Item>
+                                <Row>
+                                    <Col>Status:</Col>
+                                    <Col>
+                                        {product.inStock > 0 ? <Badge bg="success">Available</Badge> : <Badge bg="danger">Unavailable</Badge>}
+                                    </Col>
+                                </Row>
+                            </ListGroup.Item>
+                        
+                            {product.inStock > 0 && (
+                                <ListGroup.Item>
+                                    <div className="d-grid">
+                                        <Button variant="primary">
+                                            Add to Cart
+                                        </Button>
+                                    </div>
+                                </ListGroup.Item>
+                            )}
+                        </ListGroup>
+                    </Card.Body>
+                </Card>
+                
+            </Col>
         </Row>
     );
 }

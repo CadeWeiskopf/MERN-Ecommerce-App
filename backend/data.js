@@ -18,7 +18,7 @@ const data = {
             category: 'T-shirts',
             image: '/images/frowneyshirt.jpg',
             price: 70,
-            inStock: 1000,
+            inStock: 0,
             brand: 'Test Brand',
             rating: 5,
             numReviews: 78,
