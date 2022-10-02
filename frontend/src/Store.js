@@ -12,10 +12,7 @@ function reducer(state, action) {
     switch(action.type) {
         case 'CART_ADD_ITEM':
             state.cart.cartItems.push(action.payload);
-            return {
-                ...state, 
-                cart: {...state.cart}
-            };
+            return { ...state };
         default:
             return state;
     }
