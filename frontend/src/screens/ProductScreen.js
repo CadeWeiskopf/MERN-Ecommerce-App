@@ -10,6 +10,8 @@ import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Rating from '../components/Rating';
 import { Helmet } from 'react-helmet-async';
+import { Store } from "../Store";
+import { useContext } from "react";
 
 
 const reducer = (state, action) => {
@@ -47,6 +49,17 @@ function ProductScreen() {
         fetchData();
     }, [slug]);
 
+    console.log('product screen');
+    const {state, dispatch: contextDispatch} = useContext(Store);
+    const addToCartHandler = () => {
+        contextDispatch({
+            type: 'CART_ADD_ITEM',
+            payload: {
+                ...product, 
+                quantity: 1
+            }
+        });
+    };
     return loading ? (
         <div>Loading...</div>
     ) : error ? (
@@ -94,7 +107,7 @@ function ProductScreen() {
                             {product.inStock > 0 && (
                                 <ListGroup.Item>
                                     <div className="d-grid">
-                                        <Button variant="primary">
+                                        <Button onClick={addToCartHandler} variant="primary">
                                             Add to Cart
                                         </Button>
                                     </div>
