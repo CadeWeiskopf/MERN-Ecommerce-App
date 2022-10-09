@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Axios from "axios";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Store } from "../Store";
 
 function SigninScreen() {
@@ -18,6 +18,7 @@ function SigninScreen() {
     const [password, setPassword] = useState('');
 
     const {state, dispatch: contextDispatch} = useContext(Store);
+    const {userInfo} = state;
     const submitHandler = async (event) => {
         event.preventDefault();
         try {
@@ -37,7 +38,14 @@ function SigninScreen() {
         } catch (error) {
             window.alert('Invalid email/password');
         }
-    }
+    };
+
+    useEffect(() => {
+        if (userInfo) {
+            navigate(redirect);
+        }
+    }, [navigate, redirect, userInfo]);
+
     return (
         <Container className="small-container">
             <Helmet>
