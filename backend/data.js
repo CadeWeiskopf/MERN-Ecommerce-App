@@ -1,3 +1,5 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
     products: [
         {
@@ -38,6 +40,21 @@ const data = {
             rating: 4,
             numReviews: 99,
             description: 'Go sox!'
+        }
+    ],
+    users: [
+        {
+            name: 'cade',
+            email: 'cade@test.com',
+            hash: bcrypt.hashSync('password' + 'salt'),
+            salt: 'salt',
+            roles: ['Admin']
+        },
+        {
+            name: 'cade2',
+            email: 'cade2@test.com',
+            hash: bcrypt.hashSync('hello' + 'world'),
+            salt: 'world'
         }
     ]
 }

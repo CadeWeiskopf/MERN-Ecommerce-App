@@ -4,9 +4,11 @@ export const Store = createContext();
 
 const initialState = {
     cart: {
-        cartItems: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
+        cartItems: localStorage.getItem('cartItems') && localStorage.getItem('cartItems') !== 'undefined' ? JSON.parse(localStorage.getItem('cartItems')) : []
     }
 }
+
+
 
 function reducer(state, action) {
     switch(action.type) {
