@@ -36,6 +36,11 @@ function reducer(state, action) {
             );
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
             return { ...state };
+        case 'USER_SIGNIN':
+            return {
+                ...state,
+                userInfo: action.payload
+            };
         default:
             return state;
     }
