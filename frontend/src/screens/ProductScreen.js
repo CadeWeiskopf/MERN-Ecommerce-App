@@ -50,13 +50,11 @@ function ProductScreen() {
         fetchData();
     }, [slug]);
 
-    console.log('product screen');
     const {state, dispatch: contextDispatch} = useContext(Store);
     const {cart} = state;
     const addToCartHandler = async () => {
         const itemInCart = cart.cartItems.find((x) => x._id === product._id);
         const quantity = itemInCart ? itemInCart.quantity + 1 : 1;
-        console.log(`'quantity=', ${quantity}`);
         const {data} = await axios.get(`/api/products/${product._id}`);
         if (data.inStock < quantity) {
             window.alert('Sorry, there is not enough stock for this quantity.');
