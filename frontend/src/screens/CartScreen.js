@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from "react-bootstrap/esm/Button";
 import { Store } from '../Store';
@@ -13,6 +13,7 @@ import axios from "axios";
 function CartScreen() {
     const {state, dispatch: contextDispatch} = useContext(Store);
     const {cart: {cartItems}} = state;
+    const navigate = useNavigate();
 
     const updateCartHandler = async (item, quantity) => {
         const {data} = await axios.get(`/api/products/${item._id}`);
@@ -34,6 +35,10 @@ function CartScreen() {
             type: 'CART_REMOVE_ITEM',
             payload: item
         });
+    }
+
+    const checkoutHandler = () => {
+        navigate('/signin?redirect=/shipping');
     }
 
     return (
@@ -100,7 +105,7 @@ function CartScreen() {
                                 </ListGroup.Item>
                                 <ListGroup.Item>
                                     <div className="d-grid">
-                                        <Button type="button" variant="primary" disabled={cartItems.length === 0}>
+                                        <Button type="button" variant="primary" disabled={cartItems.length === 0} onClick={checkoutHandler}>
                                             Checkout
                                         </Button>
                                     </div>
