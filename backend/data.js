@@ -1,6 +1,7 @@
 const data = {
     products: [
         {
+            _id: '1',
             name: 'Smiley T-Shirt',
             slug: 'smiley-t-shirt',
             category: 'T-shirts',
@@ -13,6 +14,7 @@ const data = {
             description: 'Really funk t-shirt with a cool smiley graphic!'
         },
         {
+            _id: '2',
             name: 'Frowney T-Shirt',
             slug: 'frowney-t-shirt',
             category: 'T-shirts',
@@ -25,6 +27,7 @@ const data = {
             description: 'Turn it upside down!'
         },
         {
+            _id: '3',
             name: 'Red Sox Hat',
             slug: 'red-sox-hat',
             category: 'Hats',
