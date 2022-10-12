@@ -13,6 +13,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { useContext } from 'react';
 import { Store } from './Store';
 import SigninScreen from './screens/SigninScreen';
+import ShippingAddressScreen from './screens/ShippingAddressScreen';
 
 function App() {
   const { state, dispatch: contextDispatch } = useContext(Store);
@@ -71,6 +72,7 @@ function App() {
       <main>
         <Container className='mt-3'>
           <Routes>
+            <Route path="/shipping" element={<ShippingAddressScreen />} />
             <Route path="/product/:slug" element={<ProductScreen />} />
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/signin" element={<SigninScreen />} />
