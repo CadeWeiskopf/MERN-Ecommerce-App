@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 
 export const generateToken = (user) => {
     return jwt.sign(
@@ -14,3 +15,7 @@ export const generateToken = (user) => {
         }
     );
 };
+
+export const generateSalt = async () => {
+    return bcrypt.genSalt();
+}
