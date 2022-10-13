@@ -61,3 +61,8 @@ main {
 .checkout-steps > div.active {
   border-bottom: 0.2rem solid #de0b0b;
 }
+
+.home-logo {
+  max-width: 16px;
+  max-height: 16px;
+}

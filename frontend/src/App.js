@@ -33,7 +33,7 @@ function App() {
         <Navbar bg="dark" variant="dark">
           <Container>
             <LinkContainer to='/'>
-              <Navbar.Brand>cade.csg</Navbar.Brand>
+              <Navbar.Brand><img className='home-logo' src='/images/red_bolt_1.png' alt='cade.csg'></img>cade.csg</Navbar.Brand>
             </LinkContainer>
             <Nav className="me-auto">
               <Link to="/cart" className='nav-link'>
