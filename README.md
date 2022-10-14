@@ -2,11 +2,11 @@
 
 Desktop
 
-![image](https://user-images.githubusercontent.com/16111717/195680781-f37bc072-8248-48a5-87a2-7b9a5626edc0.png)
+![image](https://user-images.githubusercontent.com/16111717/195735905-1974c3a6-e1b6-431f-8759-70c005cd8d5d.png)
 
 
 
 Mobile
 
-![image](https://user-images.githubusercontent.com/16111717/195680918-84d5a0f4-2047-4429-aa8d-11b5b27fa8dd.png)
+![image](https://user-images.githubusercontent.com/16111717/195735859-882359cd-0a79-4c27-93be-d01b102912e4.png)
 
