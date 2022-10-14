@@ -21,6 +21,8 @@ const reducer = (state, action) => {
 };
 
 function HomeScreen() {
+    window.scroll(0, 0);
+    
     const [{loading, error, products}, dispatch] = useReducer(logger(reducer), {
         products: [], 
         loading: true, 

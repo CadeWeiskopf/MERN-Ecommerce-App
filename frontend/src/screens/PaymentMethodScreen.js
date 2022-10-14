@@ -6,6 +6,8 @@ import { Store } from '../Store';
 import { useNavigate } from 'react-router-dom';
 
 function PaymentMethodScreen() {
+    window.scroll(0, 0);
+    
     const navigate = useNavigate();
     const {state, dispatch: contextDispatch} = useContext(Store);
     const {cart: {shippingAddress, paymentMethod}} = state;

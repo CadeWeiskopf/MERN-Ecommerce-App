@@ -8,6 +8,8 @@ import { useContext, useEffect, useState } from "react";
 import { Store } from "../Store";
 
 function SigninScreen() {
+    window.scroll(0, 0);
+    
     const navigate = useNavigate();
 
     const {search} = useLocation();

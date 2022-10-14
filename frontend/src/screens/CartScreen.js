@@ -11,6 +11,8 @@ import Card from 'react-bootstrap/Card';
 import axios from "axios";
 
 function CartScreen() {
+    window.scroll(0, 0);
+    
     const {state, dispatch: contextDispatch} = useContext(Store);
     const {cart: {cartItems}} = state;
     const navigate = useNavigate();

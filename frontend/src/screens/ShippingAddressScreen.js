@@ -7,6 +7,8 @@ import { Store } from '../Store';
 import CheckoutSteps from '../components/CheckoutSteps';
 
 function ShippingAddressScreen() {
+    window.scroll(0, 0);
+    
     const navigate = useNavigate();
     const {state, dispatch: contextDispatch} = useContext(Store);
     const {userInfo, cart: {shippingAddress}} = state;

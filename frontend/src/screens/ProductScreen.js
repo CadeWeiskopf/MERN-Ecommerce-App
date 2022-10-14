@@ -28,6 +28,8 @@ const reducer = (state, action) => {
 };
 
 function ProductScreen() {
+    window.scroll(0, 0);
+    
     const navigate = useNavigate();
     const params = useParams();
     const {slug} = params;
@@ -67,6 +69,7 @@ function ProductScreen() {
                 quantity: quantity
             }
         });
+        
         navigate('/cart');
     };
     return loading ? (
