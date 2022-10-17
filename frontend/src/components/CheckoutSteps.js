@@ -30,7 +30,7 @@ function CheckoutSteps(props) {
             {
                 parseInt(props.step) > 3 ? 
                 (
-                    <LinkContainer to="/payment"><Col className='active'>Confirm</Col></LinkContainer>
+                    <LinkContainer to="/confirmorder"><Col className='active'>Confirm</Col></LinkContainer>
                 )
                 :
                 (
