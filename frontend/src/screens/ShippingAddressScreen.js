@@ -49,7 +49,7 @@ function ShippingAddressScreen() {
             <Helmet>
                 <title>Shipping Address</title>
             </Helmet>
-            <CheckoutSteps stepSignin stepShipping></CheckoutSteps>
+            <CheckoutSteps step="2"></CheckoutSteps>
             <div className='container small-container'>
                 <h1 className='my-3'>Shipping Address</h1>
                 <Form onSubmit={submitHandler}>

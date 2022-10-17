@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import CheckoutSteps from '../components/CheckoutSteps';
 import { Store } from '../Store';
 import { useNavigate } from 'react-router-dom';
@@ -29,7 +30,7 @@ function PaymentMethodScreen() {
             <Helmet>
                 <title>Payment Method</title>
             </Helmet>
-            <CheckoutSteps stepSignin stepShipping stepPayment></CheckoutSteps>
+            <CheckoutSteps step="3"></CheckoutSteps>
             <div className='container small-container'>
                 <h1 className='my-3'>Payment Method</h1>
                 <Form onSubmit={submitHandler}>
@@ -53,6 +54,7 @@ function PaymentMethodScreen() {
                             onChange={(e) => setPaymenthMethod(e.target.value)}
                         />
                     </div>
+                    <Button type='submit'>Continue</Button>
                 </Form>
             </div>
         </div>
