@@ -11,6 +11,7 @@ body {
 }
 main {
   flex: 1;
+
 }
 .btn-primary {
   /*background-color: #f0c040;*/
@@ -59,7 +60,7 @@ main {
   border-bottom: 0.2rem solid #404040;
 }
 .checkout-steps > div.active {
-  border-bottom: 0.2rem solid #de0b0b;
+  border-bottom: 0.2rem solid #dc3545;
 }
 
 .home-logo {
