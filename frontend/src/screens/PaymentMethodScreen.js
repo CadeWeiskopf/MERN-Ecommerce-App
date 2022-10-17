@@ -23,9 +23,15 @@ function PaymentMethodScreen() {
 
     const submitHandler = (e) => {
         e.preventDefault();
+        contextDispatch({
+            type: 'SAVE_PAYMENT_METHOD',
+            payload: paymentMethodName
+        });
+        localStorage.setItem('paymentMethodName', paymentMethodName);
+        navigate('/confirmorder');
     };
+
     return (
-        
         <div>
             <Helmet>
                 <title>Payment Method</title>
