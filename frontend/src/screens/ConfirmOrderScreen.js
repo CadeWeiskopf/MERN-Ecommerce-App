@@ -9,7 +9,9 @@ import { Store } from '../Store';
 
 
 export default function ConfirmOrderScreen() {
-    
+    const {state, dispatch: contextDispatch} = useContext(Store);
+    const {cart} = state;
+    console.log(cart);
     return (
         <div>
             <Helmet>
@@ -22,7 +24,11 @@ export default function ConfirmOrderScreen() {
                     <Card className='mb-3'>
                         <Card.Body>
                             <Card.Title>Shipping</Card.Title>
-                            <Card.Text></Card.Text>
+                            <Card.Text>
+                                Name: {cart.shippingAddress.shipFirstName} {cart.shippingAddress.shipLastName} 
+                                <br/>
+                                Address: {cart.shippingAddress.shipAddress1} {cart.shippingAddress.shipAddress2} {cart.shippingAddress.shipCity} {cart.shippingAddress.shipZip} {cart.shippingAddress.country}
+                            </Card.Text>
                             <Link to="/shipping">Edit</Link>
                         </Card.Body>
                     </Card>

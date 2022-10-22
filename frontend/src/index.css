@@ -67,3 +67,15 @@ main {
   max-width: 32px;
   max-height: 32px;
 }
+
+.test {
+  background-color: #fefeff;
+}
+
+.test2 {
+  background-color: #212529;
+}
+
+.footer-text-color {
+  color: #7c8992;
+}
